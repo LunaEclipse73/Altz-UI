@@ -305,9 +305,10 @@ T.createcheckbutton(IInnerframe.common, 30, 180, L["显示物品等级"], "ItemO
 T.createDR(IInnerframe.common.enablebag, IInnerframe.common.showitemlevel)
 T.createcheckbutton(IInnerframe.common, 30, 210, L["已会配方着色"], "ItemOptions", "alreadyknown", L["已会配方着色提示"])
 T.createcheckbutton(IInnerframe.common, 30, 240, L["自动修理"], "ItemOptions", "autorepair", L["自动修理提示"])
-T.createcheckbutton(IInnerframe.common, 230, 240, L["自动公会修理"], "ItemOptions", "autorepair_guild", L["自动公会修理提示"])
-T.createcheckbutton(IInnerframe.common, 30, 270, L["自动售卖"], "ItemOptions", "autosell", L["自动售卖提示"])
-T.createcheckbutton(IInnerframe.common, 230, 270, L["自动购买"], "ItemOptions", "autobuy", L["自动购买提示"])
+T.createcheckbutton(IInnerframe.common, 30, 270, L["自动公会修理"], "ItemOptions", "autorepair_guild", L["自动公会修理提示"])
+T.createcheckbutton(IInnerframe.common, 230, 270, L["灵活公会修理"], "ItemOptions", "autorepair_guild_auto", L["灵活公会修理提示"])
+T.createcheckbutton(IInnerframe.common, 30, 300, L["自动售卖"], "ItemOptions", "autosell", L["自动售卖提示"])
+T.createcheckbutton(IInnerframe.common, 230, 300, L["自动购买"], "ItemOptions", "autobuy", L["自动购买提示"])
 
 IInnerframe.common.SF:ClearAllPoints()
 IInnerframe.common.SF:SetPoint("TOPLEFT", IInnerframe.common, "TOPLEFT", 40, -340)
@@ -839,7 +840,8 @@ T.createradiobuttongroup(UFInnerframe.castbar, 30, 310, L["法术名称位置"],
 T.createradiobuttongroup(UFInnerframe.castbar, 30, 340, L["施法时间位置"], "UnitframeOptions", "timepos", CBtextpos_group)
 T.createDR(UFInnerframe.castbar.independentcb, UFInnerframe.castbar.cbheight, UFInnerframe.castbar.cbwidth, UFInnerframe.castbar.target_cbheight, UFInnerframe.castbar.target_cbwidth, UFInnerframe.castbar.focus_cbheight, UFInnerframe.castbar.focus_cbwidth, UFInnerframe.castbar.namepos, UFInnerframe.castbar.timepos)
 T.createcheckbutton(UFInnerframe.castbar, 30, 380, L["引导法术分段"], "UnitframeOptions", "channelticks")
-T.createDR(UFInnerframe.castbar.castbars, UFInnerframe.castbar.cbIconsize, UFInnerframe.castbar.independentcb, UFInnerframe.castbar.cbheight, UFInnerframe.castbar.cbwidth, UFInnerframe.castbar.target_cbheight, UFInnerframe.castbar.target_cbwidth, UFInnerframe.castbar.focus_cbheight, UFInnerframe.castbar.focus_cbwidth, UFInnerframe.castbar.namepos, UFInnerframe.castbar.timepos, UFInnerframe.castbar.channelticks)
+T.createcheckbutton(UFInnerframe.castbar, 30, 410, L["隐藏玩家施法条图标"], "UnitframeOptions", "hideplayercastbaricon")
+T.createDR(UFInnerframe.castbar.castbars, UFInnerframe.castbar.cbIconsize, UFInnerframe.castbar.independentcb, UFInnerframe.castbar.cbheight, UFInnerframe.castbar.cbwidth, UFInnerframe.castbar.target_cbheight, UFInnerframe.castbar.target_cbwidth, UFInnerframe.castbar.focus_cbheight, UFInnerframe.castbar.focus_cbwidth, UFInnerframe.castbar.namepos, UFInnerframe.castbar.timepos, UFInnerframe.castbar.channelticks, UFInnerframe.castbar.hideplayercastbaricon)
 
 UFInnerframe.swingtimer = CreateOptionPage("UF Options swingtimer", L["平砍计时条"], UFInnerframe, "VERTICAL", .3)
 
@@ -1968,22 +1970,22 @@ end
 ActionbarInnerframe.common = CreateOptionPage("Actionbar Options common", L["通用设置"], ActionbarInnerframe, "VERTICAL", .3)
 ActionbarInnerframe.common:Show()
 
-T.createcheckbutton(ActionbarInnerframe.common, 30, 60, L["显示冷却时间"], "ActionbarOptions", "cooldown", L["显示冷却时间提示"])
-T.createslider(ActionbarInnerframe.common, 30, 110, L["冷却时间数字大小"], "ActionbarOptions", "cooldownsize", 1, 18, 25, 1, L["冷却时间数字大小提示"])
-T.createcheckbutton(ActionbarInnerframe.common, 30, 150, L["不可用颜色"], "ActionbarOptions", "rangecolor", L["不可用颜色提示"])
-T.createslider(ActionbarInnerframe.common, 30, 200, L["键位字体大小"], "ActionbarOptions", "keybindsize", 1, 8, 20, 1)
-T.createslider(ActionbarInnerframe.common, 30, 240, L["宏名字字体大小"], "ActionbarOptions", "macronamesize", 1, 8, 20, 1)
-T.createslider(ActionbarInnerframe.common, 30, 280, L["可用次数字体大小"], "ActionbarOptions", "countsize", 1, 8, 20, 1)
+T.createcheckbutton(ActionbarInnerframe.common, 30, 60, L["向上排列"], "ActionbarOptions", "growup", L["向上排列说明"])
+T.createcheckbutton(ActionbarInnerframe.common, 30, 110, L["显示冷却时间"], "ActionbarOptions", "cooldown", L["显示冷却时间提示"])
+T.createslider(ActionbarInnerframe.common, 30, 160, L["冷却时间数字大小"], "ActionbarOptions", "cooldownsize", 1, 18, 25, 1, L["冷却时间数字大小提示"])
+T.createcheckbutton(ActionbarInnerframe.common, 30, 210, L["不可用颜色"], "ActionbarOptions", "rangecolor", L["不可用颜色提示"])
+T.createslider(ActionbarInnerframe.common, 30, 250, L["键位字体大小"], "ActionbarOptions", "keybindsize", 1, 8, 20, 1)
+T.createslider(ActionbarInnerframe.common, 30, 290, L["宏名字字体大小"], "ActionbarOptions", "macronamesize", 1, 8, 20, 1)
+T.createslider(ActionbarInnerframe.common, 30, 330, L["可用次数字体大小"], "ActionbarOptions", "countsize", 1, 8, 20, 1)
 T.createDR(ActionbarInnerframe.common.cooldown, ActionbarInnerframe.common.cooldownsize)
 
 ActionbarInnerframe.bar12 = CreateOptionPage("Actionbar Options bar12", L["主动作条"], ActionbarInnerframe, "VERTICAL", .3)
 
-T.createcheckbutton(ActionbarInnerframe.bar12, 30, 60, L["更改上下位置"], "ActionbarOptions", "bar1top")
-T.createslider(ActionbarInnerframe.bar12, 30, 110, L["图标大小"], "ActionbarOptions", "bar12size", 1, 15, 40, 1)
-T.createslider(ActionbarInnerframe.bar12, 30, 150, L["图标间距"], "ActionbarOptions", "bar12space", 1, 0, 10, 1)
-T.createcheckbutton(ActionbarInnerframe.bar12, 30, 190, L["悬停渐隐"], "ActionbarOptions", "bar12mfade", L["悬停渐隐提示"])
-T.createcheckbutton(ActionbarInnerframe.bar12, 30, 220, L["条件渐隐"], "ActionbarOptions", "bar12efade", L["条件渐隐提示"])
-T.createslider(ActionbarInnerframe.bar12, 30, 270, L["渐隐透明度"], "ActionbarOptions", "bar12fademinaplha", 100, 0, 80, 5, L["渐隐透明度提示"])
+T.createslider(ActionbarInnerframe.bar12, 30, 60, L["图标大小"], "ActionbarOptions", "bar12size", 1, 15, 40, 1)
+T.createslider(ActionbarInnerframe.bar12, 30, 100, L["图标间距"], "ActionbarOptions", "bar12space", 1, 0, 10, 1)
+T.createcheckbutton(ActionbarInnerframe.bar12, 30, 140, L["悬停渐隐"], "ActionbarOptions", "bar12mfade", L["悬停渐隐提示"])
+T.createcheckbutton(ActionbarInnerframe.bar12, 30, 180, L["条件渐隐"], "ActionbarOptions", "bar12efade", L["条件渐隐提示"])
+T.createslider(ActionbarInnerframe.bar12, 30, 230, L["渐隐透明度"], "ActionbarOptions", "bar12fademinaplha", 100, 0, 80, 5, L["渐隐透明度提示"])
 
 ActionbarInnerframe.bar3 = CreateOptionPage("Actionbar Options bar3", L["额外动作条"], ActionbarInnerframe, "VERTICAL", .3)
 
@@ -2551,8 +2553,9 @@ T.createcheckbutton(TooltipOptions, 30, 240, L["显示法术编号"], "TooltipOp
 T.createcheckbutton(TooltipOptions, 30, 270, L["显示物品编号"], "TooltipOptions", "showitemID")
 T.createcheckbutton(TooltipOptions, 30, 300, L["显示天赋"], "TooltipOptions", "showtalent")
 T.createcheckbutton(TooltipOptions, 30, 330, L["战斗中隐藏"], "TooltipOptions", "combathide")
-T.createDR(TooltipOptions.enabletip, TooltipOptions.size, TooltipOptions.cursor, TooltipOptions.hideRealm, TooltipOptions.hideTitles, TooltipOptions.showspellID, TooltipOptions.showitemID, TooltipOptions.showtalent, TooltipOptions.combathide)
+T.createslider(TooltipOptions, 30, 380, L["背景透明度"], "TooltipOptions", "backdropOpacity", 100, 1, 100, 1)
 
+T.createDR(TooltipOptions.enabletip, TooltipOptions.size, TooltipOptions.cursor, TooltipOptions.hideRealm, TooltipOptions.hideTitles, TooltipOptions.showspellID, TooltipOptions.showitemID, TooltipOptions.showtalent, TooltipOptions.combathide, TooltipOptions.backdropOpacity)
 --====================================================--
 --[[             -- Combattext Options --              ]]--
 --====================================================--
@@ -2606,15 +2609,17 @@ OtherOptions.DividingLine:SetColorTexture(1, 1, 1, .2)
 T.createcheckbutton(OtherOptions, 30, 150, L["自动召宝宝"], "OtherOptions", "autopet", L["自动召宝宝提示"])
 T.createcheckbutton(OtherOptions, 30, 180, L["随机奖励"], "OtherOptions", "LFGRewards", L["随机奖励提示"])
 T.createcheckbutton(OtherOptions, 30, 210, L["稀有警报"], "OtherOptions", "vignettealert", L["稀有警报提示"])
-T.createcheckbutton(OtherOptions, 30, 240, L["Hide Vingette Alert when on taxi"], "OtherOptions", "vignettealerthide", L["Will not display vingette alerts if you are currently on a taxi"])
+T.createcheckbutton(OtherOptions, 30, 240, L["在飞行中隐藏稀有提示"], "OtherOptions", "vignettealerthide", L["在飞行中隐藏稀有提示说明"])
 T.createcheckbutton(OtherOptions, 30, 270, L["在战斗中隐藏小地图"], "OtherOptions", "hidemap")
 T.createcheckbutton(OtherOptions, 30, 300, L["在战斗中隐藏聊天框"], "OtherOptions", "hidechat")
 T.createcheckbutton(OtherOptions, 30, 330, L["在副本中收起任务追踪"], "OtherOptions", "collapseWF", L["在副本中收起任务追踪提示"])
-T.createcheckbutton(OtherOptions, 30, 360, L["COT"], "OtherOptions", "customobjectivetracker", L["COTinfo"])
+T.createcheckbutton(OtherOptions, 30, 360, L["自定义任务追踪"], "OtherOptions", "customobjectivetracker", L["自定义任务追踪提示"])
 T.createcheckbutton(OtherOptions, 30, 390, L["自动交接任务"], "OtherOptions", "autoquests", L["自动交接任务提示"])
 T.createcheckbutton(OtherOptions, 30, 420, L["自动接受复活"], "OtherOptions", "acceptres", L["自动接受复活提示"])	
 T.createcheckbutton(OtherOptions, 30, 450, L["战场自动释放灵魂"], "OtherOptions", "battlegroundres", L["战场自动释放灵魂提示"])
 T.createcheckbutton(OtherOptions, 30, 480, L["大喊被闷了"], "OtherOptions", "saysapped", L["大喊被闷了提示"])
+T.CVartogglebox(OtherOptions, 30, 450, "overrideArchive", "反和谐(大退生效)", "0", "1")
+if G.Client ~= "zhCN" then OtherOptions.overrideArchive:Hide() end
 
 T.createcheckbutton(OtherOptions, 300, 150, L["成就截图"], "OtherOptions", "autoscreenshot", L["成就截图提示"])
 T.CVartogglebox(OtherOptions, 300, 180, "screenshotQuality", L["提升截图画质"], "10", "1")
@@ -2624,11 +2629,11 @@ T.createcheckbutton(OtherOptions, 300, 270, L["回收内存"], "OtherOptions", "
 T.createcheckbutton(OtherOptions, 300, 300, L["显示插件使用小提示"], "OtherOptions", "showAFKtips", L["显示插件使用小提示提示"])
 T.createcheckbutton(OtherOptions, 300, 330, L["任务栏闪动"], "OtherOptions", "flashtaskbar", L["任务栏闪动提示"])
 --T.createcheckbutton(OtherOptions, 300, 360, L["大地图坐标"], "OtherOptions", "worldmapcoords")
-T.createcheckbutton(OtherOptions, 300, 360, L["暂离屏幕"], "OtherOptions", "afkscreen", L["暂离屏幕提示"])
-T.createcheckbutton(OtherOptions, 300, 390, L["隐藏边缘装饰"], "OtherOptions", "hidepanels", L["隐藏边缘装饰提示"])
-T.createcheckbutton(OtherOptions, 300, 420, L["快速焦点"], "OtherOptions", "shiftfocus")
-T.CVartogglebox(OtherOptions, 300, 450, "overrideArchive", "反和谐(大退生效)", "0", "1")
-if G.Client ~= "zhCN" then OtherOptions.overrideArchive:Hide() end
+T.createcheckbutton(OtherOptions, 300, 360, L["登陆屏幕"], "OtherOptions", "afklogin", L["登陆屏幕"])
+T.createcheckbutton(OtherOptions, 300, 390, L["暂离屏幕"], "OtherOptions", "afkscreen", L["暂离屏幕"])
+T.createcheckbutton(OtherOptions, 300, 420, L["隐藏边缘装饰"], "OtherOptions", "hidepanels", L["隐藏边缘装饰提示"])
+T.createcheckbutton(OtherOptions, 300, 450, L["快速焦点"], "OtherOptions", "shiftfocus")
+
 --====================================================--
 --[[               -- Skin Options --               ]]--
 --====================================================--
